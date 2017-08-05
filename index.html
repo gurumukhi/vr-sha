@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>360 Office View</title>
+  <title>SHA VR Tour</title>
   <meta name="description" content="">
   <script src="./js/aframe.min.js"></script>
 </head>
@@ -19,7 +19,7 @@
       <img id="exit" src="./assets/6.png">
       <img id="icon" src="./assets/arrow.png">
     </a-assets>
-    <a-image id="left-arrow" src="#icon" position="5 1.5 -8"></a-image>
+    <a-image id="left-arrow" src="#icon" position="0 1.5 -8"></a-image>
     <a-entity position="0 0 0" rotation="0 0 0">
       <a-entity camera look-controls wasd-controls>
         <a-entity position="0 0 -3" scale="0.2 0.2 0.2"  geometry="primitive: ring; radiusOuter: 0.20;radiusInner: 0.10;" material="color: #ADD8E6; shader: flat" cursor="maxDistance: 30; fuse: true">
@@ -45,18 +45,20 @@
     function setNewValues(newState) {
       if(newState === 1) {
         background.setAttribute('src', '#entry');
-        leftArrow.setAttribute('position', {'x': 5, 'y': 1.5, 'z': -8});
-	background.setAttribute('rotation', '0 0 0');
+//        leftArrow.setAttribute('position', {'x': 5, 'y': 1.5, 'z': -8});
+	background.setAttribute('rotation', '0 90 0');
       } else if(newState === 2) {
         background.setAttribute('src', '#left-room');
-        leftArrow.setAttribute('position', {'x': 0, 'y': 0.5, 'z': -8});
+//       leftArrow.setAttribute('position', {'x': 0, 'y': 0.5, 'z': -8});
+  background.setAttribute('rotation', '0 90 0');
       } else if(newState === 3) {
         background.setAttribute('src', '#left-corner');
+  background.setAttribute('rotation', '0 90 0');
       } else if(newState === 4) {
 	background.setAttribute('rotation', '0 90 0');
         background.setAttribute('src', '#right-corner');
       } else if(newState === 5) {
-	background.setAttribute('rotation', '0 0 0');
+	background.setAttribute('rotation', '0 180 0');
         background.setAttribute('src', '#right-room');
       } else if(newState === 6) {
         background.setAttribute('src', '#exit');
